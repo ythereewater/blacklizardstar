@@ -155,6 +155,10 @@
   </div>
 </footer>
 
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="/lib/in-view.min.js"></script>
@@ -165,7 +169,7 @@
   inView.offset(50)
 
   document.body.addEventListener('touchstart', function(){});
-  
+
   window.addEventListener('scroll', _.throttle(e => {
     var currentY = window.scrollY
     if((oldY - currentY) < 0) {
@@ -183,7 +187,7 @@
 
   $('.toc-link').each(function() {
       var href = $(this).attr("href");
-      
+
       inView(href).on('exit', () => {
         if (isDown) {
           handleActive(href)
