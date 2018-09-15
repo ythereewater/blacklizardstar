@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yangmiao.fun/"/>
-  <updated>2018-09-14T19:43:57.397Z</updated>
+  <updated>2018-09-15T11:10:32.887Z</updated>
   <id>http://yangmiao.fun/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建我的个人博客</title>
+    <link href="http://yangmiao.fun/2018/09/15/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yangmiao.fun/2018/09/15/使用hexo搭建个人博客/</id>
+    <published>2018-09-15T11:10:32.515Z</published>
+    <updated>2018-09-15T11:10:32.887Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用hexo搭建个人博客"><a href="#使用hexo搭建个人博客" class="headerlink" title="使用hexo搭建个人博客"></a>使用hexo搭建个人博客</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>大学已经过去一半多了，自己很不满足之前的学习效率，所以决定建立一个自己的博客网站，俗话说 “ 好记性不如烂笔头嘛 ”。下面是我的效果图</p><p>##搭建思路</p><h3 id="选择hexo"><a href="#选择hexo" class="headerlink" title="选择hexo"></a>选择<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a></h3><p><img src="https://i.loli.net/2018/09/15/5b9cbbb53e977.png" alt="heox首页"></p><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。hexo安装和使用非常方便，效果也非常不错。</p><h3 id="利用github-pages"><a href="#利用github-pages" class="headerlink" title="利用github pages"></a>利用github pages</h3><p>GitHub Pages本用于介绍托管在GitHub的项目，不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。<br>为什么用github pages？</p><ol><li>github pages完全免费，管理方便</li><li>学会使用git和github对程序员非常重要</li></ol><h3 id="使用阿里云购买单独域名"><a href="#使用阿里云购买单独域名" class="headerlink" title="使用阿里云购买单独域名"></a>使用<a href="https://cn.aliyun.com/?spm=5176.8097504.1146454.1.a1ce6fb5Y7atTA" target="_blank" rel="noopener">阿里云</a>购买单独域名</h3><p>github pages的默认网站会是</p><pre><code>用户名.github.io</code></pre><p>是不是感觉很逊。那么我们可以购买属于自己的域名，国内的阿里云和腾讯云都是不错的选择，这里我选择了阿里云。</p><h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>我安装的时候参考了系列视频<a href="https://www.youtube.com/watch?v=Ud1xAhu7t2Y&amp;list=PLXbU-2B80FvDjD_RiuNwsSQ4eF8pkwAIa" target="_blank" rel="noopener">快速使用 Hexo 搭建个人博客</a>（需翻墙）以及<a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">hexo从零开始到搭建完整</a>。我的安装环境是win10，对于mac用户，请参考网上其他教程。</p><ol><li>安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>以及<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></li><li>打开cmd，输入<code>npm install -g hexo-cli</code>即可完成hexo安装</li><li><p>安装 Hexo 后执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p><blockquote><p>hexo init <folder><br>cd <folder><br>npm install</folder></folder></p></blockquote></li><li><p>新建完成后，指定文件夹的目录如下</p><blockquote><p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p></blockquote></li></ol><p><img src="https://i.loli.net/2018/09/15/5b9ccdeaea293.png" alt="此处输入图片的描述"><br>_config.yml存储了网站的 配置 信息，可以在此配置大部分的参数。<br>source资源文件夹是存放用户资源的地方。<br>themes存储主题。</p><ol start="5"><li>配置<br>在 _config.yml 中修改大部份的配置。可以参考网页<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">配置|hexo</a>。<br>6.一些常用的指令可以参考网页<a href="https://hexo.io/zh-cn/docs/commands" target="_blank" rel="noopener">指令|hexo</a>。</li></ol><p>init</p><pre><code>$ hexo init [folder]</code></pre><p>新建一个网站</p><p>new</p><pre><code>$ hexo new [layout] &lt;title&gt;</code></pre><p>新建一篇文章</p><p>generate</p><pre><code>$ hexo generate</code></pre><p>生成静态文件，添加-d文件生成后立即部署网站，可以简写为</p><pre><code>$ hexo g</code></pre><p>  server</p><pre><code>$ hexo server</code></pre><p>启动服务器。默认情况下，访问网址为：<a href="http://localhost:4000/。" target="_blank" rel="noopener">http://localhost:4000/。</a></p><p>deploy</p><pre><code>$ hexo deploy</code></pre><p>部署网站。</p><p>7.生成网站效果</p><p><img src="https://i.loli.net/2018/09/15/5b9cd17fc0a9e.png" alt="此处输入图片的描述"></p><p>8.修改主题</p><p>我们可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes|Hexo</a>选择喜欢的主题进行配置</p><h3 id="将配置好的网站配置到github-pages"><a href="#将配置好的网站配置到github-pages" class="headerlink" title="将配置好的网站配置到github pages"></a>将配置好的网站配置到github pages</h3><ul><li>首先我们需要一个github账号，如果没有的话先创建一个。</li><li>然后我们创建一个repo，名称为yourname.github.io,其中yourname是你的github名称，按照这个规则创建才有用</li><li>打开git bash，配置github账户信息</li><li><blockquote><p>git config –global user.name “YourName”<br>git config –global user.email “YourEmail”</p></blockquote></li></ul><p>将YourName和YourEail都替换成你自己的</p><p>在github中输入</p><blockquote><p>ssh-keygen -t rsa -C “<a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a></p></blockquote><p>生成ssh，在.ssh文件中找到<code>id_rsa.pub</code>文件，用记事本打开，将里面的内容复制到github中</p><p><img src="https://i.loli.net/2018/09/15/5b9cd85f2e8c2.png" alt="github">!    <a href="https://i.loli.net/2018/09/15/5b9cd895b461f.png" target="_blank" rel="noopener">github</a></p><p><img src="https://i.loli.net/2018/09/15/5b9cd909e467a.png" alt="github"></p><p>最后一步，修改_config.yml文件的一些配置，</p><blockquote><p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a><br>  branch: master</p></blockquote><p>然后进入你的blog目录，分别执行以下命令：</p><blockquote><p>hexo clean<br>hexo generate<br>hexo server</p></blockquote><p>注意deploy的过程中要输入你的username及passward。</p><p>在浏览器中输入<a href="http://yourgithubname.github.io就可以看到个人博客" target="_blank" rel="noopener">http://yourgithubname.github.io就可以看到个人博客</a></p><h3 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h3><p>绑定域名我是在阿里云购买的<a href="yangmiao.fun">yangmiao.fun</a>。<br>首先我们再github你的博客项目中添加一个叫CHAME的文件<br><img src="https://i.loli.net/2018/09/15/5b9cdf6203db2.png" alt="CHAME"><br>在文件中添加你的域名，比如我是</p><pre><code>yangmiao.fun</code></pre><p>然后我们进入阿里云网站，找到自己刚刚购买的域名，点击解析，在解析域名中添加自己博客的ipv4地址，该地址可以通过在cmd中输入以下内容找到</p><pre><code>ping yangmiao.fun</code></pre><p>之后我们就可以通过该地址访问我们的博客了</p><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://i.loli.net/2018/09/15/5b9ce3e4e3a17.png" alt="yangmiao.fun"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li>学习的过程很辛苦，但是我们唯有这一条路可走。</li><li>第一次写博客，有很多不足的地方。欢迎各位大佬来指针和交流。</li><li>markdown的编写可以参考网上的资料，博主也在学习中。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol><li><a href="https://www.youtube.com/watch?v=Ud1xAhu7t2Y&amp;list=PLXbU-2B80FvDjD_RiuNwsSQ4eF8pkwAIa" target="_blank" rel="noopener">快速使用 Hexo 搭建个人博客</a></li><li><a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">hexo从零开始到搭建完整</a> </li><li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档|hexo</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;使用hexo搭建个人博客&quot;&gt;&lt;a href=&quot;#使用hexo搭建个人博客&quot; class=&quot;headerlink&quot; title=&quot;使用hexo搭建个人博客&quot;&gt;&lt;/a&gt;使用hexo搭建个人博客&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>服务计算学习（一）</title>
@@ -30,27 +51,6 @@
       
       
         &lt;h1 id=&quot;使用-VirtualBox-让-PC-提供云桌面服务&quot;&gt;&lt;a href=&quot;#使用-VirtualBox-让-PC-提供云桌面服务&quot; class=&quot;headerlink&quot; title=&quot;使用 VirtualBox 让 PC 提供云桌面服务&quot;&gt;&lt;/a&gt;使用 Virtu
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yangmiao.fun/2018/09/14/HelloWorld/"/>
-    <id>http://yangmiao.fun/2018/09/14/HelloWorld/</id>
-    <published>2018-09-13T19:48:00.915Z</published>
-    <updated>2018-09-14T19:43:59.285Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>
